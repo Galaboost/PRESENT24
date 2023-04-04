@@ -6,7 +6,6 @@ p = [0, 6, 12, 18, 1, 7, 13, 19, 2, 8, 14, 20, 3, 9, 15, 21, 4, 10, 16, 22, 5, 1
 s = ['c', 5, 6, 'b', 9, 0, 'a', 'd', 3, 'e', 'f', 8, 4, 7, 1, 2]
 
 
-
 def hex_to_bin(value,bit):
     value = bin(int(value, 16))[2:].zfill(bit)
     return value
@@ -27,7 +26,6 @@ def subtitution(etat, s):
         return result
     else:
         return hex_to_bin(str(s[int(etat, 2)]), 4)
-
 
 
 def cadencement_cle(cle):
@@ -78,7 +76,6 @@ def chiffrement(message,cle):
     return etat
 
 
-
 def test(c,message_chiffre):
     c = hex(int(c, 2))[2:]
     if c == message_chiffre:
@@ -102,6 +99,3 @@ if __name__ == "__main__":
     test(b, "739293")
     test(c, "1b56ce")
     test(d, "47a929")
-
-
-

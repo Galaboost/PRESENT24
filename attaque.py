@@ -59,9 +59,11 @@ def commun(lm,lc,m2,c2):
         
         else:
             res_m = chiffrement(m2,lm[i][1])
-            res_c = dechiffrement(c2,lc[j][1])
+            res_m = hex(int(res_m , 2))[2:]
+            res_c = chiffrement(res_m,lc[j][1])
+            res_c = hex(int(res_c,2))[2:]
             colision += 1
-            if res_m == res_c:
+            if res_c == c2:
                 k.append((lm[i][1],lc[j][1]))
             i += 1
             j += 1
@@ -81,4 +83,4 @@ print(commun(lm,lc,"d5c434","df353e"))
 # (m1,c1) = (3cfa0f, 1cdcb2) (m2,c2) = (d5c434,df353e)
 
 # nb de colision : 4446466
-# k1,k2 : (3984739, 5425154) 3CCD63 52C808
+# k1,k2 : (644881, 15525163) -> 09D711, ECE52B 
